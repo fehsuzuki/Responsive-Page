@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+}
+
+:root {
+    --color-background: #fff;
+    --color-background-servicos: #fbf3dc;
+    --color-btn-servicos: #d8c16a;
+    --color-background-acesso-rapido: #e7e7e7;
+    --color-btn-acesso-rapido: #9b9a97;
+    --color-background-footer: #726a52;
+    --color-text1-footer: #fff;
+    --color--text2-footer: #000;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    min-height: 100px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.header::after {
+    position: absolute;
+    content: '';
+    background-color: var(--color-btn-servicos);
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.btn-header {
+    font-size: 1.2rem;
+    padding: .5rem;
+    border: 2px solid transparent;
+    background-color: var(--color-background);
+    cursor: pointer;
+}
+
+.btn-header:hover {
+    border-bottom: 2px solid var(--color-btn-servicos);
+    transition: .3s;
+}
+
+.introducao {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: 5rem 0 3rem 0;
+    padding: 2rem;
+    background-color: var(--color-background-servicos);
+}
+ .introducao > h1 {
+    margin-bottom: 1rem;
+ }
+
+ .main-content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 'servicos acesso-rapido';
+ }
+
+.servicos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 7rem 2rem 2rem 2rem;
+    position: relative;
+    background-color: var(--color-background-servicos);
+    grid-area: servicos;
+}
+
+/* .servicos::after {
+    position: absolute;
+    content: '';
+    background-color: var(--color-btn-servicos);
+    width: 100px;
+    height: 1px;
+    top: 5%;
+    left: 44.5%;
+} */
+
+.servicos-title {    
+    position: absolute;
+    top: 2%;
+    left: 45%;
+    color: var(--color-btn-servicos);
+}
+
+.servicos > div {
+    height: auto;
+    width: 12rem;
+    text-align: center;
+}
+
+.servicos .img {
+    border-radius: 1rem;
+    cursor: pointer;
+    border: .1px solid var(--color-btn-servicos);
+    width: 150px;
+}
+
+.servicos .img:hover {
+    border: 2px solid var(--color-btn-servicos);
+}
+
+.acesso-rapido .img {
+    border-radius: 1rem;
+    cursor: pointer;
+    border: .1px solid var(--color-btn-acesso-rapido);
+    width: 150px;
+}
+.acesso-rapido .img:hover {
+    border: 2px solid var(--color-btn-acesso-rapido);
+}
+
+.acesso-rapido {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    padding: 7rem 2rem 2rem 2rem;
+    gap: 1rem;
+    background-color: var(--color-background-acesso-rapido);
+    grid-area: acesso-rapido;
+}
+
+/* .acesso-rapido::after {
+    position: absolute;
+    content: '';
+    background-color: var(--color-btn-acesso-rapido);
+    width: 160px;
+    height: 1px;
+    top: 5%;
+    left: 34%;
+} */
+
+.acesso-rapido-title {
+    position: absolute;
+    top: 2%;
+    left: 35%;
+    color: var(--color-btn-acesso-rapido);
+}
+
+.acesso-rapido > div {
+    height: auto;
+    width: 12rem;
+    text-align: center;
+}
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    padding: 2rem;
+    justify-content: center;
+    background-color: var(--color-background-footer);
+    gap: 5rem;
+    position: relative;
+}
+
+/* .footer::after {
+    position: absolute;
+    content: '';
+    background-color: #ffffff;
+    height: 150px;
+    width: 1px;
+    top: 20%;
+    left: 43%;
+} */
+
+.footer-second {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer-second > a {
+    color: var(--color--text2-footer);
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 3rem;
+    text-align: center;
+    padding: 10px;
+}
+
+.footer-second > label {
+    text-align: center;
+}
+
+.footer-second > label {
+    color: var(--color-text1-footer);
+}
+
+@media (max-width: 570px) {
+    .main-content {
+        grid-template-areas: 
+        'servicos'
+        'acesso-rapido';
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .servicos {
+        justify-content: center;
+    } 
+
+    .acesso-rapido {
+        justify-content: center;
+    }
+}
+
